@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaPagamento
-<<<<<<< HEAD
-build_property.ProjectDir = c:\Users\47423489824\Desktop\Sistema-de-Pagamento\SistemaPagamento\
-=======
-build_property.ProjectDir = c:\Users\Ricardo\Documents\SENAI\Sistema-de-Pagamento\SistemaPagamento\
->>>>>>> origin/richard
+build_property.ProjectDir = c:\Users\macie\OneDrive\Área de Trabalho\Sistema-de-Pagamento\SistemaPagamento\
