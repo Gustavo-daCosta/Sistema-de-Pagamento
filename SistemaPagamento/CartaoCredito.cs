@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClasseCartao;
 
-namespace  Cartao
+namespace  CartaoCredito
 {
-    public class Credito
+    public class Credito : Cartao
     {
         public float Limite { get; set; }
 
