@@ -12,7 +12,7 @@ namespace  CartaoCredito
 
 
 
-        public (float, float) PrestacaoJuros(int a , float b, float c){
+        public float PrestacaoJuros(int a , float b, float c){
             c = 0f;
             
 
@@ -25,10 +25,10 @@ namespace  CartaoCredito
             }
             
 
-        float prestacao = (b * c) / a;
-        float valortotal = b * c;
+       
+        float valortotal = b * c + b;
 
-        return (prestacao,valortotal);
+        return valortotal;
         
 
         }
