@@ -12,15 +12,11 @@ namespace  CartaoCredito
 
         
 
-        public override void  Pagar(){
-        Console.WriteLine($"Em quantas prestações deseja fazer");
-        bala:
+        public override bool Pagar(){
+        Console.WriteLine($"Em quantas prestações deseja fazer?");
+       
         int parcela = int.Parse(Console.ReadLine()); 
-        if (parcela >12)
-        {
-            Console.WriteLine($"Prestacao tem que ser menor ou igual a 12, Tente novamente");
-            goto bala; 
-        }
+        
         float taxa = 0f;
             
 
@@ -33,6 +29,7 @@ namespace  CartaoCredito
                 Console.WriteLine( this.Valor*1.08f);
             }
             
+            return parcela <= 12 ? true : false;
 
        
         
