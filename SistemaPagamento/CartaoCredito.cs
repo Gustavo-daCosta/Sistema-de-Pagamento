@@ -10,32 +10,36 @@ namespace  CartaoCredito
     {
         public float Limite { get; set; }
 
-        public override bool Pagar()
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public float PrestacaoJuros(int a , float b, float c){
-            c = 0f;
+        public override bool Pagar(){
+        Console.WriteLine($"Em quantas prestações deseja fazer?");
+       
+        int parcela = int.Parse(Console.ReadLine()); 
+        
+        float taxa = 0f;
             
 
-            if (a <=6)
+            if (parcela <=6)
             {
-               c = 0.05f; 
+                Console.WriteLine( this.Valor*1.05f);               
+                
             }
-            else if (c >= 7 && c <=12){
-                c = 0.08f;
+            else if (taxa >= 7 && taxa <=12){
+                Console.WriteLine( this.Valor*1.08f);
             }
             
+            return parcela <= 12 ? true : false;
 
        
-        float valortotal = (b * c) + b;
-
-        return valortotal;
+        
+    
+        
         
 
         }
         
+            
             
 
 
