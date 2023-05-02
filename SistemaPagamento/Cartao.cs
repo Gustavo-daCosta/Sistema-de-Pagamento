@@ -1,17 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SistemaPagamento;
+using GlobalVariables;
 
 namespace ClasseCartao
 {
-    public class Cartao
+    public abstract class Cartao : Pagamento
     {
-        public string Bandeira;
-        public string NumeroCartao;
-        public string Titular;
-        public string Cvv;
+        public string? Bandeira;
+        public string? NumeroCartao;
+        public string? Titular;
+        public string? Cvv;
         public abstract void Pagar();
-        public string SalvarCartao();
+        public bool SalvarCartao(Cartao cartaoInput)
+        {
+            foreach (Cartao cartaoChecado in Globals.cartoes)
+            {
+                if (cartaoChecado == cartaoInput)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
