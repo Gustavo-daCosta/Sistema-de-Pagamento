@@ -26,7 +26,7 @@ namespace  CartaoCredito
             
 
        
-        float valortotal = b * c + b;
+        float valortotal = (b * c) + b;
 
         return valortotal;
         
