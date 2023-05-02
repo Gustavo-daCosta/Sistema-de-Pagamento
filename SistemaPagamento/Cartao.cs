@@ -1,6 +1,7 @@
 using SistemaPagamento;
 using GlobalVariables;
 using CartaoCredito;
+using System;
 
 namespace ClasseCartao
 {

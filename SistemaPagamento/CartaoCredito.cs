@@ -10,7 +10,7 @@ namespace  CartaoCredito
     {
         public float Limite { get; set; }
 
-        public override void Pagar()
+        public override bool Pagar()
         {
             throw new NotImplementedException();
         }
