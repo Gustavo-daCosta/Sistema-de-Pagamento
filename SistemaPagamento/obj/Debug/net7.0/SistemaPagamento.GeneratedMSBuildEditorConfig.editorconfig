@@ -9,7 +9,20 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaPagamento
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+build_property.ProjectDir = c:\Users\53282675836\Desktop\Sistema-de-Pagamento\SistemaPagamento\
+=======
+>>>>>>> origin/paladino
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\macie\OneDrive\Área de Trabalho\Sistema-de-Pagamento\SistemaPagamento\
 =======
 build_property.ProjectDir = c:\Users\47417895867\Desktop\Sistema-de-Pagamento\SistemaPagamento\
 >>>>>>> origin/richard
+<<<<<<< HEAD
+=======
+build_property.ProjectDir = c:\Users\53282675836\Desktop\Sistema-de-Pagamento\SistemaPagamento\
+>>>>>>> origin/paladino
+=======
+>>>>>>> 4aa811d68d91998bd906265ac238c62b67cb14d6
+>>>>>>> origin/paladino
