@@ -10,6 +10,11 @@ namespace  CartaoCredito
     {
         public float Limite { get; set; }
 
+        public override void Pagar()
+        {
+            throw new NotImplementedException();
+        }
+
         //Parcela com juros Valor não pode ser maior que limite 
     }
 }
