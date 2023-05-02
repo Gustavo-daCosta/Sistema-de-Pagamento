@@ -12,7 +12,7 @@ namespace SistemaPagamento
         {
             throw new NotImplementedException();
         }
-
+ 
         private float MostrarSaldo()
         {
             return this.Saldo;
