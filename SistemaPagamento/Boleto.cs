@@ -14,8 +14,14 @@ namespace ClasseBoleto
             Funcionalidades.Titulo($"Registrar boleto");
             Boleto boleto = new Boleto();
 
+            valor:
             Console.Write($"Digite o valor do boleto: R$");
             boleto.Valor = float.Parse(Console.ReadLine()!);
+
+            if (boleto.Valor <= 0) {
+                Funcionalidades.Mensagem($"Valor inválido! Digite um valor maior que zero.");
+                goto valor;
+            }
 
             boleto.CodigoDeBarras = GerarCodigoDeBarras();
 
