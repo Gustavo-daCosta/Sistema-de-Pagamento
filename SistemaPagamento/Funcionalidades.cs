@@ -7,7 +7,7 @@ namespace ClasseFuncionalidades
 {
     public class Funcionalidades
     {
-        static void Mensagem(string mensagem, ConsoleColor color = ConsoleColor.Red) {
+        public static void Mensagem(string mensagem, ConsoleColor color = ConsoleColor.Red) {
             Console.Clear();
             Console.ForegroundColor = color;
             Console.WriteLine(mensagem);
@@ -20,7 +20,7 @@ namespace ClasseFuncionalidades
         public static void Titulo(string mensagem, ConsoleColor color = ConsoleColor.Blue) {
             Console.Clear();
             Console.ForegroundColor = color;
-            Console.WriteLine($" === {mensagem} ===");
+            Console.WriteLine($" === {mensagem.ToUpper()} ===");
             Console.ResetColor();
         }
     }
