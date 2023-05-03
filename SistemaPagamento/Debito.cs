@@ -3,7 +3,7 @@
 using System;
 using ClasseCartao;
 
-namespace SistemaPagamento
+namespace CartaoDebito
 {
     public class Debito : Cartao 
     {
