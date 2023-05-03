@@ -34,6 +34,22 @@ namespace ClasseBoleto
             Funcionalidades.Mensagem($"Boleto Registrado com sucesso!", ConsoleColor.Green);
         }
 
+        public void VerBoletos() {
+            if (Globals.boletos.Any()) {
+                int i = 0;
+                foreach (Boleto boleto in Globals.boletos) {
+                    i++;
+                    Console.WriteLine($"\n Dados do boleto {i}:");
+                    Console.WriteLine($"Valor: {boleto.Valor.ToString("C2", new CultureInfo("pt-BR"))}");
+                    Console.WriteLine($"Data: {boleto.Data}");
+                    Console.WriteLine($"Código de barras: {boleto.CodigoDeBarras}");
+                }
+                Funcionalidades.Mensagem($"Fim da lista de boletos!", ConsoleColor.Green);
+            } else {
+                Funcionalidades.Mensagem($"Nenhum boleto foi registrado até o momento!", ConsoleColor.Blue);
+            }
+        }
+
         private string GerarCodigoDeBarras() {
             string codigoBarras = "";
             Random random = new Random();
