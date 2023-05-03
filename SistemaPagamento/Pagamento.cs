@@ -8,7 +8,7 @@ namespace SistemaPagamento
     public class Pagamento
     {
 
-        private DateTime Data { get; set; } = DateTime.Now.Date;
+        public DateTime Data { get; private set; } = DateTime.Now.Date;
 
         public float Valor { get; set; }
 
