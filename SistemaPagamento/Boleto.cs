@@ -16,6 +16,7 @@ namespace ClasseBoleto
             valor:
             Console.Write($"Digite o valor do boleto: R$");
             boleto.Valor = float.Parse(Console.ReadLine()!);
+            boleto.Valor -= (boleto.Valor * 0.12F);
 
             if (boleto.Valor <= 0) {
                 Funcionalidades.Mensagem($"Valor inválido! Digite um valor maior que zero.");
