@@ -6,17 +6,10 @@ using CartaoCredito;
 using CartaoDebito;
 
 // Métodos principais
-static int Menu() {
+static int Menu(string titulo, string descricao) {
     menu:
-    Funcionalidades.Titulo($"Sistema de pagamento");
-    Console.WriteLine(@$"
-    Selecione a forma de pagamento:
-
-    [1] - Boleto
-    [2] - Cartão
-    
-    [0] - Sair do programa
-    ");
+    Funcionalidades.Titulo(titulo);
+    Console.WriteLine(descricao);
     Console.Write($"Digite a opção desejada: ");
     int opcao = int.Parse(Console.ReadLine()!);
 
@@ -27,82 +20,84 @@ static int Menu() {
     return opcao;
 }
 
-static int MenuBoleto() {
-    menu:
-    Funcionalidades.Titulo($"Sistema de cartão");
-    Console.WriteLine(@$"
-    Selecione o tipo do cartão:
-
-    [1] - Registrar novo boleto
-    [2] - Ver boletos registrados
-
-    [0] - Voltar ao menu
-    ");
-    Console.Write($"Digite a opção desejada: ");
-    int opcao = int.Parse(Console.ReadLine()!);
-
-    if (opcao == 0) {
-        Menu();
-    } else if (opcao != 1 && opcao != 2) {
-        Funcionalidades.Mensagem($"Opção inválida digitada! Tente novamente.");
-        goto menu;
-    }
-    return opcao;
-}
-
-static char MenuCartao() {
-    menu:
-    Funcionalidades.Titulo($"Sistema de cartão");
-    Console.WriteLine(@$"
-    Selecione o tipo do cartão:
-
-    [1] - Crédito
-    [2] - Débito
-
-    [0] - Voltar ao menu
-    ");
-    Console.Write($"Digite a opção desejada: ");
-    int opcao = int.Parse(Console.ReadLine()!);
-
-    if (opcao == 0) {
-        Menu();
-    } else if (opcao != 1 && opcao != 2) {
-        Funcionalidades.Mensagem($"Opção inválida digitada! Tente novamente.");
-        goto menu;
-    }
-    return opcao == 1 ? 'C' : 'D';
-}
-
 bool desejaContinuar = true;
 
 // Instâncias das classes
 Boleto boleto = new Boleto();
 
 while (desejaContinuar) {
-    int opcao = Menu();
+    int opcao = Menu(
+        $"Sistema de pagamento",
+        @$"
+Selecione a forma de pagamento:
+
+[1] - Boleto
+[2] - Cartão
+
+[0] - Sair do programa
+    "
+    );
 
     switch (opcao) {
         case 1:
-            int opcaoBoleto = MenuBoleto();
-            if (opcao == 1) {
+            menuBoleto:
+            int opcaoBoleto = Menu(
+                $"Sistema de pagamento",
+                @$"
+Selecione uma opção:
+
+[1] - Registrar novo boleto
+[2] - Ver boletos registrados
+
+[0] - Voltar ao menu
+    ");
+            if (opcaoBoleto == 1) {
                 boleto.Registrar();
-            } else {
+            } else if (opcaoBoleto == 2) {
                 boleto.VerBoletos();
+            } else {
+                break;
             }
-            break;
+            goto menuBoleto;
         case 2:
-            char opcaoCartao = MenuCartao();
-            if (opcaoCartao == 'C') {
+            menuCartao:
+            int opcaoCartao = Menu(
+                $"Sistema de cartão",
+                @$"
+Selecione o tipo do cartão:
+
+[1] - Pagar no Crédito
+[2] - Pagar no Débito
+
+[0] - Voltar ao menu
+    "
+            );
+            if (opcaoCartao == 1) {
                 Credito cartaoCredito = new Credito();
-                cartaoCredito.Pagar();
-            } else if (opcaoCartao == 'D') {
+
+                // Definir limite do cartão de crédito
+                cartaoCredito.DefinirLimite();
+                // Pagar conta
+                bool transacaoConcluida = cartaoCredito.Pagar();
+                
+                Funcionalidades.Mensagem(transacaoConcluida ? $"\nTransação concluída!" : $"Transação inválida! O valor da parcela é maior que o limite do cartão.", transacaoConcluida? ConsoleColor.Green : ConsoleColor.Red);
+
+            } else if (opcaoCartao == 2) {
                 Debito cartaoDebito = new Debito();
-                cartaoDebito.Pagar();
+
+                // Definir saldo da conta
+                cartaoDebito.DefinirSaldo();
+                // Pagar conta
+                bool transacaoConcluida = cartaoDebito.Pagar();
+
+                Funcionalidades.Mensagem(transacaoConcluida ? $"\nTransação concluída!" : $"Transação inválida! Você não tem saldo suficiente na conta para concluir a transação.", transacaoConcluida? ConsoleColor.Green : ConsoleColor.Red);
+            } else {
+                break;
             }
-            break;
+            goto menuCartao;
         default:
             Funcionalidades.Mensagem($"Saindo do programa...");
-            Environment.Exit(1);
+            desejaContinuar = false;
             break;
     }
 }
