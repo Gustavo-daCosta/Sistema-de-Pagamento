@@ -25,26 +25,31 @@ namespace ClasseBoleto
 
             boleto.CodigoDeBarras = GerarCodigoDeBarras();
 
-            Console.WriteLine($"\n Dados do boleto:");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"\nDados do boleto:");
+            Console.ResetColor();
             Console.WriteLine($"Valor: {boleto.Valor.ToString("C2", new CultureInfo("pt-BR"))}");
-            Console.WriteLine($"Data: {boleto.Data}");
-            Console.WriteLine($"Código de barras: {boleto.CodigoDeBarras}");
+            Console.WriteLine($"Data: {boleto.Data.ToShortDateString()}");
+            Console.WriteLine($"Código de barras: {boleto.CodigoDeBarras}\n");
 
             Globals.boletos.Add(boleto);
-            Funcionalidades.Mensagem($"Boleto Registrado com sucesso!", ConsoleColor.Green);
+            Funcionalidades.Mensagem($"Boleto Registrado com sucesso!", ConsoleColor.Green, limparConsole: false);
         }
 
         public void VerBoletos() {
             if (Globals.boletos.Any()) {
+                Console.Clear();
                 int i = 0;
                 foreach (Boleto boleto in Globals.boletos) {
                     i++;
-                    Console.WriteLine($"\n Dados do boleto {i}:");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"\n{i}º Boleto:");
+                    Console.ResetColor();
                     Console.WriteLine($"Valor: {boleto.Valor.ToString("C2", new CultureInfo("pt-BR"))}");
-                    Console.WriteLine($"Data: {boleto.Data}");
+                    Console.WriteLine($"Data: {boleto.Data.ToShortDateString()}");
                     Console.WriteLine($"Código de barras: {boleto.CodigoDeBarras}");
                 }
-                Funcionalidades.Mensagem($"Fim da lista de boletos!", ConsoleColor.Green);
+                Funcionalidades.Mensagem($"\nFim da lista de boletos!", ConsoleColor.Green, limparConsole: false);
             } else {
                 Funcionalidades.Mensagem($"Nenhum boleto foi registrado até o momento!", ConsoleColor.Blue);
             }
