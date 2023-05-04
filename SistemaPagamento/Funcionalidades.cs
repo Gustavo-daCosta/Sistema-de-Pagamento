@@ -7,8 +7,8 @@ namespace ClasseFuncionalidades
 {
     public class Funcionalidades
     {
-        public static void Mensagem(string mensagem, ConsoleColor color = ConsoleColor.Red) {
-            Console.Clear();
+        public static void Mensagem(string mensagem, ConsoleColor color = ConsoleColor.Red, bool limparConsole = true) {
+            if (limparConsole) { Console.Clear(); }
             Console.ForegroundColor = color;
             Console.WriteLine(mensagem);
             Console.ResetColor();
