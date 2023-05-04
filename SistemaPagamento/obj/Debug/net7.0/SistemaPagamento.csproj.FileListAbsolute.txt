@@ -1,0 +1,15 @@
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\bin\Debug\net7.0\SistemaPagamento.exe
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\bin\Debug\net7.0\SistemaPagamento.deps.json
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\bin\Debug\net7.0\SistemaPagamento.runtimeconfig.json
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\bin\Debug\net7.0\SistemaPagamento.dll
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\bin\Debug\net7.0\SistemaPagamento.pdb
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.csproj.AssemblyReference.cache
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.AssemblyInfoInputs.cache
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.AssemblyInfo.cs
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.csproj.CoreCompileInputs.cache
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.dll
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\refint\SistemaPagamento.dll
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.pdb
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\SistemaPagamento.genruntimeconfig.cache
+C:\Users\51908518855\Desktop\Sistema-de-Pagamento\SistemaPagamento\obj\Debug\net7.0\ref\SistemaPagamento.dll

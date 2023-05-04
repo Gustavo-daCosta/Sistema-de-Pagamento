@@ -2,7 +2,6 @@ using SistemaPagamento;
 using GlobalVariables;
 using CartaoCredito;
 using CartaoDebito;
-using System;
 
 namespace ClasseCartao
 {

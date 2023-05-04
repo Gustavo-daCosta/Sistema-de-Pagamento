@@ -1,5 +1,4 @@
 ﻿// Import de classes
-using GlobalVariables;
 using ClasseFuncionalidades;
 using ClasseBoleto;
 using CartaoCredito;

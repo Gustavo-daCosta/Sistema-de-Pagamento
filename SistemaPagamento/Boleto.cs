@@ -1,4 +1,3 @@
-using System;
 using SistemaPagamento;
 using GlobalVariables;
 using ClasseFuncionalidades;
