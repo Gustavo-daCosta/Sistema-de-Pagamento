@@ -22,6 +22,18 @@ namespace CartaoCredito
         public override bool Pagar() {
             Funcionalidades.Titulo($"Pagar - Cartão de crédito");
 
+            Console.Write($"\nDigite a bandeira do cartão: ");
+            this.Bandeira = Console.ReadLine()!;
+
+            Console.Write($"Digite número do cartão: ");
+            this.NumeroCartao = Console.ReadLine()!;
+
+            Console.Write($"Digite o titular do cartão: ");
+            this.Titular = Console.ReadLine()!;
+
+            Console.Write($"Digite o CVV do cartão: ");
+            this.Cvv = Console.ReadLine()!;
+
             valor:
             Console.Write($"Digite o valor da transação: R$");
             this.Valor = float.Parse(Console.ReadLine()!);
@@ -52,7 +64,16 @@ namespace CartaoCredito
             this.Valor += this.Valor * taxa;
             float valorParcela = this.Valor / parcelas;
 
-            Console.WriteLine($"Dados da transação:");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"Dados do cartão:");
+            Console.ResetColor();
+            Console.WriteLine($"Bandeira do cartão: {this.Bandeira}");
+            Console.WriteLine($"Número do cartão: {this.NumeroCartao}");
+            Console.WriteLine($"Bandeira do cartão: {this.Bandeira}");
+            Console.WriteLine($"Cvv do cartão: {this.Cvv}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"\nDados da transação:");
+            Console.ResetColor();
             Console.WriteLine($"Valor total: {this.Valor.ToString("C2", new CultureInfo("pt-BR"))}");
             Console.WriteLine($"Valor de cada parcela: {valorParcela.ToString("C2", new CultureInfo("pt-BR"))}");
             Console.WriteLine($"Número de parcelas: {parcelas} parcelas");
