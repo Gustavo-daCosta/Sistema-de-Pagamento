@@ -8,12 +8,31 @@ namespace CartaoCredito
     {
         public float Limite { get; set; }
 
+        public void DefinirLimite() {
+            limite:
+            Console.Write($"Qual é o limite do cartão de crédito? R$");
+            this.Limite = float.Parse(Console.ReadLine()!);
+
+            if (this.Limite <= 0) {
+                Funcionalidades.Mensagem($"Limite inválido! Digite um valor maior que zero.");
+                goto limite;
+            }
+        }
+
         public override bool Pagar() {
             Funcionalidades.Titulo($"Pagar - Cartão de crédito");
-            Credito cartaoCredito = new Credito();
+
+            valor:
+            Console.Write($"Digite o valor da transação: R$");
+            this.Valor = float.Parse(Console.ReadLine()!);
+
+            if (this.Valor <= 0) {
+                Funcionalidades.Mensagem($"Valor inválido! Digite um valor maior que zero.");
+                goto valor;
+            }
 
             parcelas:
-            Console.WriteLine($"Em quantas prestações deseja fazer?");
+            Console.Write($"Em quantas prestações deseja fazer? ");
             int parcelas = int.Parse(Console.ReadLine()!);
 
             if (parcelas < 0 || parcelas > 12) {
@@ -30,7 +49,7 @@ namespace CartaoCredito
                 taxa = 0.08F;
             }
 
-            this.Valor *= taxa;
+            this.Valor += this.Valor * taxa;
             float valorParcela = this.Valor / parcelas;
 
             Console.WriteLine($"Dados da transação:");
@@ -38,8 +57,11 @@ namespace CartaoCredito
             Console.WriteLine($"Valor de cada parcela: {valorParcela.ToString("C2", new CultureInfo("pt-BR"))}");
             Console.WriteLine($"Número de parcelas: {parcelas} parcelas");
             Console.WriteLine($"Taxa de juros: {taxa * 100}%");
-            
-            return parcelas <= 12 ? true : false;
+
+            Console.Write($"\nAperte ENTER para continuar...");
+            Console.ReadLine();
+
+            return valorParcela < this.Limite;
         }
     }
 }
